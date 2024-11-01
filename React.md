@@ -8,9 +8,8 @@ Dentro pasta cliente, podemos criar um arquivo chamado `main.html`, ele será re
 
 Para utilizarmos o React diretamente, nó precimos importa-lo no nosso **JavaScript**:
 
-_main.js_
-
-```
+```JS
+//main.js
 import React from 'react'
 ```
 
@@ -86,7 +85,6 @@ Após o arquivo ser criado podemos definir a criação de components em 3 passo:
 2. Cria o `Component`;
 3. Exportar o `Component`;
 
-
 #### 1. Importar React
 
 Como visto antes para importar oo React basta usarmos a palavra chava `import` seguido de um nome que será usado para identificar a biblíoteca e por fim informamos de onde está serndo importado usando a palavra `from`.
@@ -96,6 +94,7 @@ import React from 'react'
 ```
 
 #### 2. Criar o Component
+
 Para criarmos o `Component` usaremos o mesmo principio visto antes, criaremos uma função que retornará um `JSX`.
 
 ```JS
@@ -116,12 +115,11 @@ Como as bibliotecas, arquivos também podem ser importado via JavaScript, para i
 export default ImageList
 ```
 
---- 
 Isso garante que nosso `Component` possa ser reutilizado em qualquer parte de nosso projeto quando nessesário, basta importá-lo.
 
 ## Component Nesting
 
-Component Nesting é a pratica de agrupar Components como fazemos em HTML, ao invéns de inserirmos apenas Tags HTML dentro de Components, podemos também rednerizar Components. 
+Component Nesting é a pratica de agrupar Components como fazemos em HTML, ao invéns de inserirmos apenas Tags HTML dentro de Components, podemos também rednerizar Components.
 
 Para isso precisamos fazer o seguinte:
 
@@ -138,7 +136,7 @@ import ImageList from './components/ImageList'
 
 ### 2. Instanciar Component
 
-Após importar o componente, para inserilo dentro de outro component usaremos a seguinte sintaxe: <componentName />, dessa forma o componente será renderizado dentro de outro component.
+Após importar o componente, para inserilo dentro de outro component usaremos a seguinte sintaxe: `<componentName />` dessa forma o componente será renderizado dentro de outro component.
 
 ```JS
 function App(){
@@ -158,11 +156,11 @@ Em geral a maioria dos projetos React's evita o uso da substituição de tags HT
 - Uni toda a criação de html no React
 - Contribui com boas praticas e organização de código
 
-
 ## Organização de Projetos React
+
 Com isso em mente os Projetos React por padrão possuem um arquivo `main.html` contendo metadados, `body` e uma tag com id `root`, após isso com o React é renderizado o `component` `App` na tag `root` e todos outros componentes são aninhados ao `App` usando `component Nesting`.
 
-```
+```md
 Project
 |__main.html
 |___src
@@ -172,6 +170,7 @@ Project
 ```
 
 ## Renderizando listas
+
 É comum quando estamos trabalhando com react no depararmos com listas de informações para serem renderizadas, sejam elas vindas de API ou listas simples. O React trata a renderização de listas da seguinte forma:
 
 > Você irá depender de recursos do JavaScript como o loop for e a função map() de arrays
@@ -184,6 +183,7 @@ const products = [
   { title: 'Maçã', id: 3 },
 ];
 ```
+
 > Dentro do seu componente, use a função map() para transformar um array de produtos em um array de itens `<li>`:
 
 ```JS
@@ -211,11 +211,11 @@ return (
 
 ## Props
 
-Props em React funcionam semelhantes à parâmetro em funções comuns, ou seja, são informações passada para um Component. Essas informações são uteis caso o conteudo de um Component dependa de uma informação externa. 
-Para trabalharmos com Props primeiro modificaremos nosso component, como em funções precisamos indicar que component recebera props: 
+Props em React funcionam semelhantes à parâmetro em funções comuns, ou seja, são informações passada para um Component. Essas informações são uteis caso o conteudo de um Component dependa de uma informação externa.
+Para trabalharmos com Props primeiro modificaremos nosso component, como em funções precisamos indicar que component recebera props:
 
-*imageDetail*
 ```JS
+// imageDetail.js
 export default function ImageDetail(props) {
   return <div>ImageDetail</div>;
 }
@@ -230,7 +230,6 @@ return <ImageDetail picture={image} />
 ```
 
 dessa forma ImageDetail esta recebendo `image`como prop, para acessála podemos chamar props.picture.
-
 
 ## Key props
 
@@ -248,13 +247,11 @@ const listItems = products.map(product =>
 
 Fonte: [https://pt-br.react.dev/learn#rendering-lists](https://pt-br.react.dev/learn#rendering-lists)
 
-
 ## Buscando dados
 
 Normalmente quando trabalhamos com React usamos uma API para buscar informações já processadas, pois o uso do React é no front-end, não teremos listas prontas como no exemplo usado, ao inves disso usamo Requisições AJAX.
 
 Em React podemos usar tanto AJAX puro, fetch ou até outras bibliotecas como o Axios.
-
 
 ## Usando Axios
 
@@ -262,18 +259,18 @@ Para usar o Axios precisamos instala-lo e importa-lo.
 
 ### intalar
 
-*Terminal*
-```CLI
+
+```js
+//Terminal
 npm install axios
 ```
 
 ### importar
 
-*main.js*
 ```JS
+//main.js
 import Axios from 'axios'
 ```
-
 
 Após isso podemos fazer nossas primeiras requisições:
 
@@ -288,10 +285,14 @@ Axios("https://api.unsplash.com/photos/", {
 
 ## Hooks
 
-## useState
+### useRefs
 
-## useEffect
+### useState
+
+### useEffect
 
 ## Classed component
 
 ## Handle Action
+
+## React Router
