@@ -6,7 +6,7 @@ export const App = () => {
   return (
     <>
       <Header />
-      <main className="flex justify-center w-full flex-col">
+      <main className="flex justify-center w-full flex-col items-center">
         <Outlet />
       </main>
     </>

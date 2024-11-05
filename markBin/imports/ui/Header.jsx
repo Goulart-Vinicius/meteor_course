@@ -1,6 +1,6 @@
 import React from "react";
 import Account from "./accounts";
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
   const buttonClass = `
@@ -13,11 +13,11 @@ export default function Header() {
     transition
   `;
 
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
   async function onCreateBinClick() {
     const bin = await Meteor.callAsync("bins.insert");
-    return navigate(`/bin/${bin}`)
+    return navigate(`/bin/${bin}`);
   }
 
   return (

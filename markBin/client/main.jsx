@@ -5,8 +5,8 @@ import "./main.html"; // Importando o arquivo HTML
 import React from "react";
 import { Bins } from "../imports/api/bins";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Bin_main from "/imports/ui/Bin_main";
-import Bin_list from "../imports/ui/Bin_list";
+import Bin_main from "../imports/ui/bin_workspace/Bin_main";
+import Bin_list from "../imports/ui/home/Bin_list";
 
 Template.reactTarget.onRendered(() => {
   const container = document.getElementById("react-target");

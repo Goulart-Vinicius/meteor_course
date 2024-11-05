@@ -23,13 +23,16 @@ Meteor.methods({
   },
   "bins.updateShared": async function (binId, email) {
     try {
-      const emails = await Bins.findOneAsync(binId);
       if (!email) {
         throw new Error("Can't share bin with null email.");
       }
-      if (email in emails) {
+
+      const bin = await Bins.findOneAsync(binId);
+
+      if (bin.sharedWith.includes(email)) {
         throw new Error("Bin has already been shared with this email.");
       }
+
       await Bins.updateAsync(binId, { $push: { sharedWith: email } });
       return { error: "" };
     } catch (error) {
